@@ -32,8 +32,7 @@ void check_command(char *command)
  * input the 'which' command followed by a list of commands to check their
  * existence in the system's PATH. It prints whether each command is found or
  * not.
- * Return:
- * Always returns 0.
+ * Return: Always returns 0.
  */
 int main(void)
 {
