@@ -23,7 +23,7 @@ int main(void)
 	char *args[] = {"/bin/ls", "-l", "/tmp", NULL}; /* Command and arguments */
 
 	/* Loop to create child processes */
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 5; i++)
 	{
 		/* Fork a child process */
 		pid = fork();
