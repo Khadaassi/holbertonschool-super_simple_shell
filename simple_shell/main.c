@@ -8,10 +8,9 @@
  */
 int main(int ac, char **av, char **env)
 {
-	(void)ac; /* Unused parameter */
-	(void)av; /* Unused parameter */
-	char *buffer;				/* Stores the input from the user */<
-	size_t sizeBuffer = 0;		/* Size of the buffer */
+
+	char *buffer;				/* Stores the input from the user */
+	size_t size_buffer = 0;		/* Size of the buffer */
 	char *cmd;					/* Stores the full path to the command */
 	char **args;				/* Stores the arguments passed to the command */
 	pid_t pid = 0;				/* Stores the process ID of the child process */
@@ -24,7 +23,7 @@ int main(int ac, char **av, char **env)
 		/* Print the prompt */
 		printf("$ ");
 		/* Read input from the user */
-		n_chars = getline(&buffer, &sizeBuffer, stdin);
+		n_chars = getline(&buffer, &size_buffer, stdin);
 		/* Remove the newline character at the end of the input */
 		if (n_chars == -1)
 		{
