@@ -11,7 +11,7 @@
  */
 char *get_command(char *command)
 {
-	char *path =NULL;
+	char *path = NULL;
 	char *token, *command_full;
 	struct stat st;
 

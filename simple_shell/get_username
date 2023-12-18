@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ * get_username - Function to retrieve the username.
+ *
+ * Return: a pointer to the username,
+ *         or root if their is no username.
+ */
+char *get_username(void)
+{
+	char *username = NULL;
+
+	username = _getenv("USER=");
+
+	if (username == NULL)
+	{
+		username = "root";
+	}
+
+	return (username);
+}

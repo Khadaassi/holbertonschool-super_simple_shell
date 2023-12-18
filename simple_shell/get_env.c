@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
+#include "main.h"
 /**
  * _getenv - Retrieves the value of an environment variable.
  * @name: The name of the environment variable to retrieve.
@@ -17,7 +12,6 @@
  */
 char *_getenv(const char *name)
 {
-	extern char **environ;
 	int i = 0;
 	char *key;
 
