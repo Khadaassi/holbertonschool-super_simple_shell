@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * main - Entry point
  * @ac: The number of arguments passed to the program.
@@ -5,18 +6,18 @@
  * @env: An array of pointers to the environment variables.
  * Return: Always 0
  */
-*/
 int main(int ac, char **av, char **env)
 {
-	{
-		char *buffer = NULL; /* Buffer to store the input string */
-		size_t sizeBuffer = 0; /* Size of the buffer */
-		char *cmd; /* Stores the full path to the command */
-
-	char **args; /* Stores the arguments passed to the command */
-	pid_t pid; /* Stores the process ID of the child process */
-	int status, n_chars; /* Stores the status of the child process */
-
+	(void)ac; /* Unused parameter */
+	(void)av; /* Unused parameter */
+	char *buffer;				/* Stores the input from the user */<
+	size_t sizeBuffer = 0;		/* Size of the buffer */
+	char *cmd;					/* Stores the full path to the command */
+	char **args;				/* Stores the arguments passed to the command */
+	pid_t pid = 0;				/* Stores the process ID of the child process */
+	int status, n_chars;		/* Stores the status of the child process */
+	(void)ac; /* Unused parameter */
+	(void)av; /* Unused parameter */
 	/* Get the value of the "PATH" environment variable */
 	while (1)
 	{
@@ -60,6 +61,8 @@ int main(int ac, char **av, char **env)
 		{
 			wait(&status);
 		}
-		return (0);
 	}
+	free(buffer); /* Free the memory allocated for the buffer */
+    free(args);   /* Free the memory allocated for the tokens */
+	return (0);
 }

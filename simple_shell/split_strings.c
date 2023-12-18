@@ -13,7 +13,8 @@
 
 char **split_string(char *buffer, char *del)
 {
-	char *token, **tokens; /* Stores the tokens */
+	char *token;
+	char **tokens; /* Stores the tokens */
 	int index = 0; /* Stores the index of the current token */
 
 	/* Tokenize the input string */
@@ -22,11 +23,11 @@ char **split_string(char *buffer, char *del)
 	/* Store the tokens in the tokens array */
 	while (token)
 	{
-		token[index] = token; /* Store the token in the tokens array */
+		tokens[index] = token; /* Store the token in the tokens array */
 		token = strtok(NULL, del); /* Get the next token */
 		index++; /* Increment the index of the current token */
 	}
-	token[index] = NULL; /* Set the last element of the array to NULL */
+	tokens[index] = NULL; /* Set the last element of the array to NULL */
 	return (tokens); /* Return the array of tokens */
 
 	/* Print the tokens (for testing purposes) */

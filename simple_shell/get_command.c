@@ -11,7 +11,8 @@
  */
 char *get_command(char *command)
 {
-	char *path, *token, *command_full;
+	char *path =NULL;
+	char *token, *command_full;
 	struct stat st;
 
 	/* Tokenize the "PATH" environment variable */

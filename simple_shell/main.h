@@ -11,3 +11,5 @@
 char *_getenv(const char *name);
 char *get_command(char *command);
 char **split_string(char *buffer, char *del);
+
+#endif /* MAIN_H */
