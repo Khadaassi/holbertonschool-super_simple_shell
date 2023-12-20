@@ -14,9 +14,9 @@ char *read_line(void)
 
 	is_terminal = isatty(STDIN_FILENO); /* Check if the input is from a terminal*/
 	if (is_terminal == 1)               /* If the input is from a terminal */
-		printf("#welcometohell$ ")      /* Print the prompt */
+		printf("#welcometohell$ ");      /* Print the prompt */
 
-	read = getline(&input_line, &len, stdin);   /* Read the line */
+	printf("#welcometohell$ ");      /* Print the prompt */
 
 	if (read == EOF)
 	{
