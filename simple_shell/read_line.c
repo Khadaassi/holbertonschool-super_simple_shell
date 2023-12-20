@@ -16,11 +16,18 @@ char *read_line(void)
 	if (is_terminal == 1)               /* If the input is from a terminal */
 		printf("#welcometohell$ ");      /* Print the prompt */
 
-	printf("#welcometohell$ ");      /* Print the prompt */
+	read = getline(&input_line, &len, stdin); 	/* Read the line */
 
-	if (read == EOF)
+	if (read == EOF)	/* If the input is EOF */
 	{
-		/*printf("\n");*/
+		if (is_terminal == 1)	/* If the input is from a terminal */
+			printf("\n");	/* Print a new line */
+		free(input_line);	/* Free the buffer */
+		exit(EXIT_SUCCESS);	/* Exit with success */
+	}
+	else if (read == -1)	/* If the input is an error */
+	{
+		printf("\n");
 		free(input_line);       /* Free the buffer */
 		exit(EXIT_FAILURE);     /* Exit with failure */
 	}

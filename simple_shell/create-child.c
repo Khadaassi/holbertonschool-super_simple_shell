@@ -11,33 +11,33 @@
  */
 void create_child_process(char *line, char **args, char **av)
 {
-	pid_t child_pid;
-	int status = 0;
+	pid_t child_pid;	/* Child process ID */
+	int status = 0;	/* Child process status */
 
-	child_pid = fork();
+	child_pid = fork();	/* Fork a child process */
 
 	if (!child_pid)
 	{
+		/* Execute the command with the arguments */
 		if (execve(args[0], args, NULL) == -1)
 		{
-			printf("%s: No such file or directory\n", av[0]);
-			free_arguments(args);
-			free(line);
-			exit(EXIT_FAILURE);
+			printf("%s: No such file or directory\n", av[0]);	/* Print error message */
+			free_arguments(args);	/* Free the arguments */
+			free(line);	/* Free the buffer */
+			exit(EXIT_FAILURE);	/* Exit with failure */
 		}
 	}
-	else if (child_pid < 0)
+	else if (child_pid < 0)	/* If the fork fails */
 	{
-		perror("process error");
-		free_arguments(args);
-		free(line);
+		perror("process error");	/* Print error message */
+		free_arguments(args);	/* Free the arguments */
+		free(line);	/* Free the buffer */
+		exit(EXIT_FAILURE);	/* Exit with failure */
 	}
-	else
+	else	/* Parent process */
 	{
-		waitpid(-1, &status, 0);
-		if (WIFEXITED(status))
-			WEXITSTATUS(status);
+		wait(&status);	/* Wait for the child to complete */
 	}
-	free_arguments(args);
-	free(line);
+	free_arguments(args);	/* Free the arguments */
+	free(line);	/* Free the buffer */
 }

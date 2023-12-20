@@ -3,12 +3,12 @@
 /**
  * signal_handler - Handles signals in Simple Shell
  * @signal_number: Signal number
- * Description: Handles the SIGINT signal for Ctrl + C.
+ * Description: Handles the SIGINT signal for Ctrl + D.
  * Return: Nothing.
  */
 void signal_handler(int signal_number)
 {
-	if (signal_number == SIGINT)	/* Ctrl + C */
+	if (signal_number == SIGINT)	/* Ctrl + D */
 	{
 		printf("welcometohell$ ");	/* Print prompt */
 	}

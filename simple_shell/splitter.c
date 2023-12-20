@@ -26,8 +26,8 @@ char **splitter(char *input_line, char *delimiters, char separator)
 	{
 		if (arguments == NULL)	/* If the allocation fails */
 		{
-			/*free(input_line);*/
-			/*free_arg(arguments);*/
+			free(input_line);
+			free_arguments(arguments);
 			return (NULL);
 		}
 
@@ -40,7 +40,7 @@ char **splitter(char *input_line, char *delimiters, char separator)
 
 			if (arguments[index] == NULL)	/* If the allocation fails */
 			{
-				/*free_arg(arguments);*/
+				free_arguments(arguments);
 				return (NULL);
 			}
 
