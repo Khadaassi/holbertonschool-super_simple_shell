@@ -38,6 +38,4 @@ void create_child_process(char *line, char **args, char **av)
 	{
 		wait(&status);	/* Wait for the child to complete */
 	}
-	free_arguments(args);	/* Free the arguments */
-	free(line);	/* Free the buffer */
 }
